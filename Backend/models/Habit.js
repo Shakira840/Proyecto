@@ -27,6 +27,11 @@ days:{
 startedAt:{
     type: Date,
     default: Date.now
+},
+userId:{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Users',
+    required: true
 }
 
 });
