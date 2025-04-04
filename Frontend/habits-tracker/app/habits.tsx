@@ -39,18 +39,41 @@ export default function Habits({ habits }: HabitsProps) {
     return Math.min((days / 66) * 100, 100); // Evita valores mayores a 100%
   };
 
-  const handleAddHabit = () => {
+ const handleAddHabit = () => {
     if (title && description) {
       dispatch(fetchAddHabitThunk({ token: user ? user.toString() : '', title, description }));
       setTitle('');
       setDescription('');
       dispatch(fetchHabitsThunk(user ? user.toString() : ''));
     }
-  };
+  }; 
 
   return (
     <div className="w-full max-w-md p-4 bg-white rounded-lg shadow-md mt-8">
       <h1 className="text-2xl font-bold mb-4 text-black">Habits</h1>
+      <div className="mb-4">
+  <input
+    type="text"
+    placeholder="Habit title"
+    value={title}
+    onChange={(e) => setTitle(e.target.value)}
+    className="px-2 py-1 border rounded mr-2 text-black"
+  />
+  <input
+    type="text"
+    placeholder="Description"
+    value={description}
+    onChange={(e) => setDescription(e.target.value)}
+    className="px-2 py-1 border rounded mr-2 text-black"
+  />
+  <button
+    onClick={handleAddHabit}
+    className="px-3 py-1 bg-green-500 text-white rounded"
+  >
+    Add Habit
+  </button>
+</div>
+
       <ul className="space-y-4">
         {habits.map((habit: Habit) => (
           <li className="flex items-center justify-between" key={habit._id}>

@@ -21,14 +21,11 @@ Antes de ejecutar el proyecto, asegúrate de tener instalado:
    npm install
 
 3. **Configurar variables de entorno**
-   MONGO_URI=mongodb://localhost:27017/habitsDB
-   PORT=3000
+   
 
 4. **Iniciar el servidor**
    npm start
-   El servidor se ejecutará en:
-🔗 http://localhost:3000
-
+   El servidor se ejecutará en
 
    ## 📌 Tecnologías Usadas
     Node.js y Express.js - Framework para backend

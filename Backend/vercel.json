@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "app.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+    "src": "/(.*)",
+    "dest": "app.js"
+    }
+  ],
+  "env": {
+    "PORT": "3001",
+    "MONGO_URI": "mongodb+srv://shakiramartinez:oClUm8z6GoRykN2h@cluster0.t9kkx.mongodb.net/habitosApp?retryWrites=true&w=majority&appName=Cluster0",
+    "JWT_SECRET": "Programación Avanzada",
+    "NODE_ENV": "development"
+  }
+}
+
